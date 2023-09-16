@@ -1,35 +1,18 @@
-## Requirements
-- [Docker](https://docs.docker.com/install)
-- [Docker Compose](https://docs.docker.com/compose/install)
+# Installation
 
 ## Setup
-1. Clone the repository.
-1. Start the containers by running `docker-compose build` in the project root.
+1. Add the host setting to /etc/hosts
+```
+127.0.0.1 yaraku.local
+```
+1. Clone source code: `git clone https://github.com/dragon99k/yaraku-code_challenge.git`
+1. Build the docker containers by running `docker-compose build` in the project root.
 1. Run `docker-compose up -d`.
-1. Access the Laravel instance on `http://localhost` (If there is a "Permission denied" error, run `docker-compose exec laravel chown -R www-data storage`).
+1. Copy .env: `cp src/.env.example src/.env`
+1. Migration: `docker-compose exec app php artisan migrate`
+1. Access the Laravel instance on `http://yaraku.local` (If there is a "Permission denied" error, run `docker-compose exec app chown -R www-data storage`).
 
-Note that the changes you make to local files will be automatically reflected in the container. 
-
-## Persistent database
-If you want to make sure that the data in the database persists even if the database container is deleted, add a file named `docker-compose.override.yml` in the project root with the following contents.
-```
-version: "3.7"
-
-services:
-  mysql:
-    volumes:
-    - mysql:/var/lib/mysql
-
-volumes:
-  mysql:
-```
-Then run the following.
-```
-docker-compose stop \
-  && docker-compose rm -f mysql \
-  && docker-compose up -d
-``` 
-"# yaraku-code_challenge" 
+# Usage
 
 ### Run PHPCS
 
