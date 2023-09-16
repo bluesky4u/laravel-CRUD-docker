@@ -4,8 +4,8 @@
 
 ## Setup
 1. Clone the repository.
-1. Start the containers by running `docker-compose up -d` in the project root.
-1. Install the composer packages by running `docker-compose exec laravel composer install`.
+1. Start the containers by running `docker-compose build` in the project root.
+1. Run `docker-compose up -d`.
 1. Access the Laravel instance on `http://localhost` (If there is a "Permission denied" error, run `docker-compose exec laravel chown -R www-data storage`).
 
 Note that the changes you make to local files will be automatically reflected in the container. 
@@ -30,3 +30,11 @@ docker-compose stop \
   && docker-compose up -d
 ``` 
 "# yaraku-code_challenge" 
+
+### Run PHPCS
+
+```sh
+./tools/phpcs.sh
+# add fix option
+./tools/phpcs.sh --fix
+```
