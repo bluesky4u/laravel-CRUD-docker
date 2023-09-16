@@ -10,4 +10,8 @@ return [
             'updateAt' => 'updated_at',
         ],
     ],
+    'filename' => [
+        'csv' => 'books_%s.csv',
+        'xml' => 'books_%s.xml',
+    ],
 ];

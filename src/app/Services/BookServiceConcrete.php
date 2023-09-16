@@ -31,11 +31,11 @@ class BookServiceConcrete implements BookService
     {
         if ($downloadAs == 'csv') {
             $headers = $this->exporter::DOWNLOAD_CSV_HEADER;
-            $fileName = sprintf(__('validation.bookList.csv'), Carbon::now('Asia/Tokyo')->format('Ymd-His'));
+            $fileName = sprintf(config('mics.filename.csv'), Carbon::now('Asia/Tokyo')->format('Ymd-His'));
             $callback = $this->convertToCsv($downloadItem);
         } else {
             $headers = $this->exporter::DOWNLOAD_XML_HEADER;
-            $fileName = sprintf(__('validation.bookList.xml'), Carbon::now('Asia/Tokyo')->format('Ymd-His'));
+            $fileName = sprintf(config('mics.filename.xml'), Carbon::now('Asia/Tokyo')->format('Ymd-His'));
             $callback = $this->convertToXml($downloadItem);
         }
 

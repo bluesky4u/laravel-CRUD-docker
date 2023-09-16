@@ -185,11 +185,6 @@ return [
         ],
     ],
 
-    'bookList' => [
-        'csv' => 'books_%s.csv',
-        'xml' => 'books_%s.xml',
-    ],
-
     'alert' => [
         'create' => [
             'success' => 'Successfully created',

@@ -23,7 +23,7 @@
                     <div class="mb-3">
                         <x-forms.field
                             type="text"
-                            name="title"
+                            name="u_title"
                             value="{{ $book['title'] }}"
                             :errors="$errors"
                             :required="true"
@@ -33,7 +33,7 @@
                     <div class="mb-4">
                         <x-forms.field
                             type="text"
-                            name="author"
+                            name="u_author"
                             value="{{ $book['author'] }}"
                             :errors="$errors"
                             :required="true"
