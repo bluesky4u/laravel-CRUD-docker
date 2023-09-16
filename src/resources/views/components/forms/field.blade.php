@@ -5,7 +5,7 @@
     'value' => '',
     'class' => ['form-control form-control-sm'],
     'labelClass' => ['form-label mb-0'],
-    'wrapperClass' => ['d-flex align-items-center gap-2'],
+    'wrapperClass' => ['d-flex gap-2'],
     'required' => false,
     'checked' => false,
     'label' => '',
@@ -17,14 +17,14 @@
 
 <div class="{{ implode(' ', (array) $wrapperClass) }}">
     @if ($label)
-    <label for="{{ $name }}" class="{{ implode(' ', (array) $labelClass) }}" style="max-width: 70px; width: 100%">
+    <label for="{{ $name }}" class="{{ implode(' ', (array) $labelClass) }}" style="max-width: 70px; width: 100%; margin-top: 2px;">
         {{ $label }}
         @if($required)
         <span class="required"></span>
         @endif
     </label>
     @endif
-    <div class="input-group">
+    <div class="w-100">
         <input
             type="{{ $type }}"
             class="{{ implode(' ', (array) $class) }}"
@@ -38,8 +38,8 @@
             maxlength="{{ $maxlength }}"
             onchange="{{ $onchange }}"
         />
+        <x-forms.error-messages :errors="$errors" :name="$name"/>
     </div>
-    <x-forms.error-messages :errors="$errors" :name="$name"/>
 </div>
 
 <style>
