@@ -22,7 +22,6 @@ class ExporterConcrete implements Exporter
     }
 
     /**
-     *
      * @return array
      */
     public function getHeaders()

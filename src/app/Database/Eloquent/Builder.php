@@ -46,7 +46,7 @@ class Builder extends BaseBuilder
      *
      * @return bool
      */
-    public function hasJoin(string $table, ?string $type = null): bool
+    public function hasJoin(string $table, string $type = null): bool
     {
         /** @var array<int, JoinClause> */
         $joins = $this->getQuery()->joins ?? [];

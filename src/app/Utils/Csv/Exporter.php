@@ -23,7 +23,6 @@ interface Exporter
     public function setHeaders(array $headers);
 
     /**
-     *
      * @return array
      */
     public function getHeaders();

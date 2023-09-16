@@ -13,7 +13,7 @@ class FileExporter
      * @param string|null $fileName
      * @param string|null $contentType
      */
-    public function __construct(\Closure $emitter, ?string $fileName = null, ?string $contentType = null)
+    public function __construct(\Closure $emitter, string $fileName = null, string $contentType = null)
     {
         $this->emitter = $emitter;
         $this->fileName = $fileName;
@@ -27,7 +27,7 @@ class FileExporter
      *
      * @return static
      */
-    public static function make(\Closure $emitter, ?string $fileName = null, ?string $contentType = null): FileExporter
+    public static function make(\Closure $emitter, string $fileName = null, string $contentType = null): FileExporter
     {
         return new static($emitter, $fileName, $contentType);
     }

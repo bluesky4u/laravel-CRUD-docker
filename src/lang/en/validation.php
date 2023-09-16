@@ -1,7 +1,6 @@
 <?php
 
 return [
-
     /*
     |--------------------------------------------------------------------------
     | Validation Language Lines
@@ -179,6 +178,30 @@ return [
     |
     */
 
-    'attributes' => [],
+    'attributes' => [
+        'book' => [
+            'title' => 'Title',
+            'author' => 'Author',
+        ],
+    ],
 
+    'bookList' => [
+        'csv' => 'books_%s.csv',
+        'xml' => 'books_%s.xml',
+    ],
+
+    'alert' => [
+        'create' => [
+            'success' => 'Successfully created',
+            'failed' => 'Failed to create',
+        ],
+        'update' => [
+            'success' => 'Successfully updated',
+            'failed' => 'Failed to update',
+        ],
+        'delete' => [
+            'success' => 'Successfully deleted',
+            'failed' => 'Failed to delete',
+        ],
+    ],
 ];

@@ -258,7 +258,7 @@ class Arr extends BaseArr
      *
      * @return string
      */
-    public static function bcsum(array $array, int $precision = 2, ?string $column = null): string
+    public static function bcsum(array $array, int $precision = 2, string $column = null): string
     {
         return static::reduce(
             $array,
