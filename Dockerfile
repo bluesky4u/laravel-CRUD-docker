@@ -16,8 +16,8 @@ ARG LARAVEL_PATH
 RUN apt-get update && apt-get install -y \
     libzip-dev \
     && docker-php-ext-install \
-        pdo_mysql \
-        zip
+    pdo_mysql \
+    zip
 
 ENV APACHE_DOCUMENT_ROOT $LARAVEL_PATH/public
 RUN sed -ri -e 's!/var/www/html!${APACHE_DOCUMENT_ROOT}!g' /etc/apache2/sites-available/*.conf
@@ -30,8 +30,7 @@ RUN mkdir -p /root/.composer
 COPY --from=composer /tmp/cache /root/.composer/cache
 
 RUN pecl install xdebug-3.0.3 \
-	&& docker-php-ext-enable xdebug \
-    && echo "xdebug.remote_enable=1" >> /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini
+    && docker-php-ext-enable xdebug
 
 COPY --from=composer $LARAVEL_PATH $LARAVEL_PATH
 
