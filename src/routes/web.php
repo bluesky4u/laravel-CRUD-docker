@@ -13,6 +13,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::group(['namespace' => '\App\Http\Controllers'], function () {
+    // book routes
+    Route::get('/', 'BookController@index')->name('books.index');
+    Route::post('books/create', 'BookController@create')->name('books.store');
+    Route::post('books/{id}/update', 'BookController@update')->name('books.update');
+    Route::delete('books/{id}', 'BookController@delete')->name('books.delete');
+    Route::get('books/download/{downloadItem}/{downloadAs}', 'BookController@download')->name('books.download');
 });
