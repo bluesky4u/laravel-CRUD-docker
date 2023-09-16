@@ -15,7 +15,7 @@ class Book extends EloquentModel
         'author',
     ];
 
-    public $sortable = ['author', 'title'];
+    public $sortable = ['id', 'author', 'title'];
 
     /**
      * @var array

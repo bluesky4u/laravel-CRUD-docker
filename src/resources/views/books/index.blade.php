@@ -116,7 +116,7 @@
             <table id="bookList" class="table table-striped table-hover" style="width:100%">
                 <thead>
                     <tr>
-                    <th scope="col">ID</th>
+                    <th scope="col">@sortablelink('id', 'ID')</th>
                     <th scope="col">@sortablelink('title', 'Title')</th>
                     <th scope="col">@sortablelink('author', 'Author')</th>
                     <th></th>
