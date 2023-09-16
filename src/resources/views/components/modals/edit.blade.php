@@ -14,23 +14,13 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header p-3">
-                <h5 class="ms-2 mb-0">Edit</h5>
+                <h5 class="ms-2 mb-0">Edit Author</h5>
                 <button type="button" class="btn-sm btn-close" data-bs-dismiss="modal"></button>
             </div>
             <form action="{{ $action }}" method="POST">
                 @csrf
                 <div class="modal-body p-4">
                     <div class="mb-3">
-                        <x-forms.field
-                            type="text"
-                            name="u_title"
-                            value="{{ $book['title'] }}"
-                            :errors="$errors"
-                            :required="true"
-                            :label="__('validation.attributes.book.title')"
-                        />
-                    </div>
-                    <div class="mb-4">
                         <x-forms.field
                             type="text"
                             name="u_author"

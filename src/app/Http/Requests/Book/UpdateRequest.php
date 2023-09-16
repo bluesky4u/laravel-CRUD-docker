@@ -16,7 +16,6 @@ class UpdateRequest extends Request
     public function rules(): array
     {
         return [
-            'u_title' => 'required|string|max:128',
             'u_author' => 'required|string|max:128',
         ];
     }
@@ -27,7 +26,6 @@ class UpdateRequest extends Request
     public function attributes(): array
     {
         return [
-            'u_title' => __('validation.attributes.book.title'),
             'u_author' => __('validation.attributes.book.author'),
         ];
     }

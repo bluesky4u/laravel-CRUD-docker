@@ -67,7 +67,6 @@ class BookController extends Controller
         $params = $request->validated();
 
         $this->bookRepository->update([
-            'title' => $params['u_title'],
             'author' => $params['u_author'],
         ], $id);
 
