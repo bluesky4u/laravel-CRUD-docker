@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\Book\IndexRequest;
 use App\Http\Requests\Book\CreateRequest;
+use App\Http\Requests\Book\IndexRequest;
 use App\Http\Requests\Book\UpdateRequest;
 use App\Repositories\BookRepository;
 use App\Services\BookService;
@@ -97,7 +97,7 @@ class BookController extends Controller
      */
     public function download(string $downloadItem, string $downloadAs, BookService $bookService)
     {
-        $stream = $bookService->exportBookList($downloadItem, $downloadAs);
+        $stream = $bookService->export($downloadItem, $downloadAs);
 
         return response()->streamDownload($stream['callback'], $stream['fileName'], $stream['headers']);
     }
